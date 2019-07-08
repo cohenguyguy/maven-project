@@ -7,7 +7,7 @@ pipeline
 		{
 			steps
 			{
-				sh '/home/ec2-user/apache-maven-3.6.1/bin/mvn clean package'
+				sh 'mvn clean package'
 			}
 			post
 			{
