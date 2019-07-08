@@ -7,8 +7,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'export PATH=$PATH:home/ec2-user/apache-maven-3.6.1/bin'
-				sh 'mvn -v'
+				sh '/home/ec2-user/apache-maven-3.6.1/bin/mvn -v'
 			}
 			post
 			{
