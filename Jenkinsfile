@@ -7,6 +7,7 @@ pipeline
 		{
 			steps
 			{
+				echo "Run maven"
 				sh 'mvn clean package'
 			}
 			post
