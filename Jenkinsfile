@@ -26,7 +26,7 @@ pipeline
 			steps
 			{
 				echo 'Deploy to Staging'
-				//build job: 'maven-project-staging-deploy'
+				build job: 'maven-project-staging-deploy'
 			}
 		}
 		stage('Deploy to Production')
