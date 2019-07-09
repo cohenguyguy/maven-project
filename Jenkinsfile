@@ -9,17 +9,16 @@ pipeline
 			{
 				withEnv(['PATH+MVN=/home/ec2-user/apache-maven-3.6.1/bin'])                    
 		                {
-					sh 'echo $MVN'
 					sh 'echo $PATH'
-					//sh 'mvn clean package'
+					sh 'mvn clean package'
 				}
-				post
+			}
+			post
+			{
+				success 
 				{
-					success 
-					{
-						echo 'Now Archiving...'
-						//archiveArtifacts artifacts: '**/target/*.war'
-					}
+					echo 'Now Archiving...'
+					//archiveArtifacts artifacts: '**/target/*.war'
 				}
 			}
 		}
