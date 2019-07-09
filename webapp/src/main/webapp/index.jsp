@@ -1,1 +1,1 @@
-Hello Tuesday 1
+Hello Hello turn your radio on
