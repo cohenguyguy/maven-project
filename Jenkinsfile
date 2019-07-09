@@ -25,6 +25,7 @@ pipeline
 		{
 			steps
 			{
+				echo 'Deploy to Staging'
 				build job: 'maven-project-staging-deploy'
 			}
 		}
@@ -32,7 +33,8 @@ pipeline
 		{	
 			steps
                         {
-
+				echo 'Deploy to Production'
+				echo 'not yet..'
                         }
 
 
