@@ -21,5 +21,22 @@ pipeline
 				}
 			}
 		}
+		stage('Deploy to Staging')
+		{
+			steps
+			{
+				build job: 'maven-project-staging-deploy'
+			}
+		}
+		stage('Deploy to Production')
+		{	
+			steps
+                        {
+
+                        }
+
+
+                }
+
 	}
 }
