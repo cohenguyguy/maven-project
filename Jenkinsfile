@@ -3,12 +3,12 @@ pipeline
 	agent any
 	stages
 	{
-		withEnv(['PATH=$PATH:/home/ec2-user/apache-maven-3.6.1/bin']) 
+		stage('Build')
 		{
-			stage('Build')
+			steps
 			{
-				steps
-				{
+				withEnv(['PATH=$PATH:/home/ec2-user/apache-maven-3.6.1/bin'])                    
+		                {
 					sh 'echo $PATH'
 					//sh 'mvn clean package'
 				}
