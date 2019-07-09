@@ -33,10 +33,24 @@ pipeline
 		{	
 			steps
                         {
-				echo 'Deploy to Production'
-				echo 'not yet..'
-                        }
+				timeout(time:5, unit:'DAYS')
+				{
+					input message: 'Approve Production Deployment?'
+				}
 
+				build job: 'maven-project-production-deploy'
+			}
+			post
+			{
+				success
+				{
+					echo 'Code Deployed to Production'
+				}
+				failure
+				{
+					echo 'Deployment failed'
+				}
+			}
 
                 }
 
