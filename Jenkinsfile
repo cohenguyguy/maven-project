@@ -7,14 +7,14 @@ pipeline
 		{
 			steps
 			{
-				sh 'mvn clean package'
+				sh 'echo $PATH'
 			}
 			post
 			{
 				success 
 				{
 					echo 'Now Archiving...'
-					archiveArtifacts artifacts: '**/target/*.war'
+					//archiveArtifacts artifacts: '**/target/*.war'
 				}
 			}
 		}
