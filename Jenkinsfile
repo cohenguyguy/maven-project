@@ -7,8 +7,9 @@ pipeline
 		{
 			steps
 			{
-				withEnv(['PATH=$PATH:/home/ec2-user/apache-maven-3.6.1/bin'])                    
+				withEnv(['PATH+MVN=/home/ec2-user/apache-maven-3.6.1/bin'])                    
 		                {
+					sh 'echo $MVN'
 					sh 'echo $PATH'
 					//sh 'mvn clean package'
 				}
