@@ -5,6 +5,7 @@ pipeline
 	tools
 	{
 		maven 'Jenkins_Maven'
+		jdk 'Jenkins_JDK'
 	}
 	stages
 	{
