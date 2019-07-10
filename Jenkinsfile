@@ -53,7 +53,7 @@ pipeline
 	    		{
 		    		steps
 			    	{
-				    	sh "scp -i /home/ec2-user/ssh/Guy01Key.pem **/target/*.war ec2-user@${params.tomcat_prod}:/home/ec2-user/apache-tomcat-8.5.42/webapps"
+				    	sh "scp -i /home/ec2-user/ssh/Guy01Key.pem **/target/*.war ec2-user@${params.tomcat_prod}:/root/apache-tomcat-8.5.42/webapps"
 				    }
 		    	}
             }
