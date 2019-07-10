@@ -45,7 +45,6 @@ pipeline
 	    		{
 		    		steps
 			    	{
-                        echo "Deploy to Staging"
 				    	sh "scp -i /home/ec2-user/ssh/Guy01Key.pem **/target/*.war ec2-user@${params.tomcat_dev}:/home/ec2-user/apache-tomcat-8.5.42/webapps"
 				    }
 			    }
@@ -54,7 +53,6 @@ pipeline
 	    		{
 		    		steps
 			    	{
-                        echo "Deploy to Production"
 				    	sh "scp -i /home/ec2-user/ssh/Guy01Key.pem **/target/*.war ec2-user@${params.tomcat_prod}:/home/ec2-user/apache-tomcat-8.5.42/webapps"
 				    }
 		    	}
