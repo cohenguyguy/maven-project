@@ -1,8 +1,3 @@
-def send_email() {
-    if
-}
-
-
 pipeline 
 {
 	agent any
