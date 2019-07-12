@@ -26,37 +26,16 @@ pipeline
 			steps
 			{
 				sh 'mvn clean package'
+                sh 'docker build . -t tomcatwa:${env.BUILD_ID}'
 			}
 			post
 			{
 				success 
 				{
-					echo 'Now Archiving...'
-					archiveArtifacts artifacts: '**/target/*.war'
+					//echo 'Now Archiving...'
+					//archiveArtifacts artifacts: '**/target/*.war'
 				}
 			}
 		}
-
-		stage('Deployments')
-		{
-            parallel
-            {
-    			stage('Deploy to Staging')
-	    		{
-		    		steps
-			    	{
-				    	sh "scp -i /home/ec2-user/ssh/Guy01Key.pem **/target/*.war ec2-user@${params.tomcat_dev}:/home/ec2-user/apache-tomcat-8.5.42/webapps"
-				    }
-			    }
-
-    			stage('Deploy to Production')
-	    		{
-		    		steps
-			    	{
-				    	sh "scp -i /home/ec2-user/ssh/Guy01Key.pem **/target/*.war ec2-user@${params.tomcat_prod}:/home/ec2-user/apache-tomcat-8.5.42/webapps"
-                    }
-		    	}
-            }
-        }
     }
 }
