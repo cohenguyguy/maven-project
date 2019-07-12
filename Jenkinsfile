@@ -28,14 +28,6 @@ pipeline
 				sh 'mvn clean package'
                 sh 'docker build . -t tomcatwa:${env.BUILD_ID}'
 			}
-			post
-			{
-				success 
-				{
-					//echo 'Now Archiving...'
-					//archiveArtifacts artifacts: '**/target/*.war'
-				}
-			}
 		}
     }
 }
