@@ -14,10 +14,10 @@ pipeline
 		jdk 'Jenkins_JDK'
 	}
 
-//	triggers
-//	{
-//		pollSCM("* * * * *")
-//	}
+	triggers
+	{
+		pollSCM("* * * * *")
+	}
 
 	stages
 	{
