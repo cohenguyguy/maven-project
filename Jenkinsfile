@@ -12,7 +12,6 @@ pipeline
 	{
 		maven 'Jenkins_Maven'
 		jdk 'Jenkins_JDK'
-        docker 'Jenkins_Docker'
 	}
 
 //	triggers
